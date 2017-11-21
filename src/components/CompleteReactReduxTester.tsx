@@ -7,22 +7,14 @@ import * as actions from '../actions/';
 export interface ComponentProperties {
   increment: () => (dispatch: Dispatch<RootState>) => void;
   decrement: () => (dispatch: Dispatch<RootState>) => void;
-  store: any
-}
-
-export interface ComponentState {
   counter: number;
 }
 
-class CompleteReactReduxTester extends React.Component<
-  ComponentProperties,
-  ComponentState
-> {
+class CompleteReactReduxTester extends React.Component<ComponentProperties, undefined> {
   constructor(props: ComponentProperties) {
     super(props);
     this.downClickedHandler = this.downClickedHandler.bind(this);
     this.upClickedHandler = this.upClickedHandler.bind(this);
-    this.state = { counter: 0 };
   }
 
   upClickedHandler() {
@@ -36,7 +28,7 @@ class CompleteReactReduxTester extends React.Component<
   render() {
     return (
       <div>
-        <div>React connect to redux: {this.state.counter}</div>
+        <div>React connect to redux: {this.props.counter}</div>
         <div>
           <button onClick={this.upClickedHandler}>Up</button>
         </div>
@@ -49,7 +41,7 @@ class CompleteReactReduxTester extends React.Component<
   }
 }
 
-function mapStateToProps(state: RootState): ComponentState {
+function mapStateToProps(state: RootState): Partial<ComponentProperties> {
   return {
     counter: state.react.reactCounter
   };

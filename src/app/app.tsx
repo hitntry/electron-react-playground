@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Hello, HowAreYou, Mood, TickTock, News, CountUp, SimpleReduxTester, SimpleReduxActTester, CompleteReactReduxTester } from '../components/';
-import { store } from '../store';
 
 const content = (
   <div id="container">
@@ -12,7 +11,7 @@ const content = (
     <CountUp />
     <SimpleReduxTester />
     <SimpleReduxActTester />
-    <CompleteReactReduxTester store={store} />
+    <CompleteReactReduxTester />
   </div>
 );
 

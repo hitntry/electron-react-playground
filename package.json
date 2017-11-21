@@ -1,9 +1,9 @@
 {
-  "name": "electron-react-playground",
-  "productName": "mynewshinything",
+  "name": "my-new-app",
+  "productName": "my-new-app",
   "version": "1.0.0",
   "description": "My Electron application description",
-  "main": "src/es6-init.js",
+  "main": "src/index.ts",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -12,7 +12,7 @@
     "lint": "tslint --project tsconfig.json --type-check --force"
   },
   "keywords": [],
-  "author": "mail",
+  "author": "felixr",
   "license": "MIT",
   "config": {
     "forge": {
@@ -29,10 +29,10 @@
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "npm"
+        "packageManager": "yarn"
       },
       "electronWinstallerConfig": {
-        "name": "mynewshinything"
+        "name": "my_new_app"
       },
       "electronInstallerDebian": {},
       "electronInstallerRedhat": {},
@@ -42,45 +42,39 @@
       },
       "windowsStoreConfig": {
         "packageName": "",
-        "name": "mynewshinything"
+        "name": "mynewapp"
       }
     }
   },
   "dependencies": {
     "@types/electron-devtools-installer": "^2.0.2",
-    "@types/react-redux": "^5.0.12",
+    "@types/react": "^0.14.55",
+    "@types/react-dom": "^0.14.20",
     "electron-compile": "^6.4.2",
-    "electron-devtools-installer": "^2.2.1",
+    "electron-devtools-installer": "^2.1.0",
     "electron-squirrel-startup": "^1.0.0",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "react-hot-loader": "^3.1.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-hot-loader": "^3.0.0-beta.6",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-act": "^1.5.0",
     "redux-observable": "^0.17.0",
     "rxjs": "^5.5.2",
-    "tslib": "^1.8.0"
+    "tslib": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^8.0.52",
     "@types/react": "^16.0.22",
     "@types/react-dom": "^16.0.3",
+    "@types/react-hot-loader": "^3.0.5",
+    "@types/react-redux": "^5.0.13",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "electron-compilers": "^5.9.0",
-    "electron-forge": "^4.1.2",
-    "electron-prebuilt-compile": "1.8.2-beta.2",
-    "tslint": "^5.8.0",
-    "typescript": "^2.2.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/deanihansen/electron-react-playground.git"
-  },
-  "bugs": {
-    "url": "https://github.com/deanihansen/electron-react-playground/issues"
-  },
-  "homepage": "https://github.com/deanihansen/electron-react-playground#readme"
+    "electron-forge": "^4.1.4",
+    "electron-prebuilt-compile": "1.7.9",
+    "tslint": "^5.1.0",
+    "typescript": "~2.2.2"
+  }
 }
