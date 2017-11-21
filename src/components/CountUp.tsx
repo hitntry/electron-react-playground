@@ -29,15 +29,11 @@ class CountUp extends React.Component<ComponentProperties, ComponentState> {
 
   private myarray: Array<SelectionOption>;
 
-  componentDidMount() {}
-
-  componentWillUnmount() {}
-
   countUpClickHandle = () => {
     this.setState(prevState => ({
       count: prevState.count + this.state.amount.value
     }));
-  };
+  }
 
   countDownClickHandle() {
     this.setState(prevState => ({
@@ -67,21 +63,21 @@ class CountUp extends React.Component<ComponentProperties, ComponentState> {
   }
 
   getSelectionOptions(): JSX.Element {
-    const options = this.myarray.map(x=> this.getOption(this.state.amount === x, x.value, x.name));
+    const options = this.myarray.map(x => this.getOption(this.state.amount === x, x.value, x.name));
     return <select onChange={this.handleChange}>{options}</select>;
   }
 
   render() {
     return (
-      <div className="generalcomponent">
+      <div className='generalcomponent'>
         <div>Count: {this.state.count} </div>
         <div>{this.getSelectionOptions()}</div>
         <div>
-          <button className="red-button" onClick={this.countUpClickHandle}>
+          <button className='red-button' onClick={this.countUpClickHandle}>
             Count up{' '}
           </button>{' '}
           or{' '}
-          <button className="red-button" onClick={this.countDownClickHandle}>
+          <button className='red-button' onClick={this.countDownClickHandle}>
             Count down
           </button>
         </div>

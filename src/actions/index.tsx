@@ -40,4 +40,3 @@ export const incrementReact: EmptyActionCreator = createAction(
 export const decrementReact: EmptyActionCreator = createAction(
   'Decrement react counter'
 );
-

@@ -35,15 +35,10 @@ class SimpleReduxActTester extends React.Component<
 
   render() {
     return (
-      <div>
-        <div>Redux-act: {this.state.counter}</div>
-        <div>
-          <button onClick={this.upClickedHandler}>Up</button>
-        </div>
-        <div>
-          <button onClick={this.downClickedHandler}>Down</button>
-        </div>
-        <div />
+      <div className='generalcomponent'>
+         <button className='red-button' onClick={this.upClickedHandler}>Up</button>
+         {' '}Redux-act: {this.state.counter}{' '}
+          <button className='red-button' onClick={this.downClickedHandler}>Down</button>
       </div>
     );
   }

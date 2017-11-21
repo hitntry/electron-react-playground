@@ -35,15 +35,10 @@ class SimpleReduxTester extends React.Component<
 
   render() {
     return (
-      <div>
-        <div>Normal Redux: {this.state.counter}</div>
-        <div>
-          <button onClick={this.upClickedHandler}>Up</button>
-        </div>
-        <div>
-          <button onClick={this.downClickedHandler}>Down</button>
-        </div>
-        <div />
+      <div className='generalcomponent'>
+          <button className='red-button' onClick={this.upClickedHandler}>Up</button>
+          {' '}Normal Redux: {this.state.counter}{' '}
+          <button className='red-button' onClick={this.downClickedHandler}>Down</button>
       </div>
     );
   }

@@ -1,16 +1,14 @@
 import { RootState } from '../reducers/';
 import * as React from 'react';
-import { connect, Dispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import * as actions from '../actions/';
+import { store } from '../store';
 
 export interface ComponentProperties {
-  increment: () => (dispatch: Dispatch<RootState>) => void;
-  decrement: () => (dispatch: Dispatch<RootState>) => void;
   counter: number;
 }
 
-class CompleteReactReduxTester extends React.Component<ComponentProperties, undefined> {
+class CompleteReactReduxTester extends React.Component<ComponentProperties> {
   constructor(props: ComponentProperties) {
     super(props);
     this.downClickedHandler = this.downClickedHandler.bind(this);
@@ -18,25 +16,20 @@ class CompleteReactReduxTester extends React.Component<ComponentProperties, unde
   }
 
   upClickedHandler() {
-    this.props.increment();
+    store.dispatch(actions.incrementReact());
   }
 
   downClickedHandler() {
-    this.props.decrement();
+    store.dispatch(actions.decrementReact());
   }
 
   render() {
     return (
-      <div>
-        <div>React connect to redux: {this.props.counter}</div>
-        <div>
-          <button onClick={this.upClickedHandler}>Up</button>
+      <div className='generalcomponent'>
+         <button className='red-button' onClick={this.upClickedHandler}>Up</button>
+         {' '}React connect to redux: {this.props.counter}{' '}
+          <button className='red-button' onClick={this.downClickedHandler}>Down</button>
         </div>
-        <div>
-          <button onClick={this.downClickedHandler}>Down</button>
-        </div>
-        <div />
-      </div>
     );
   }
 }
@@ -47,14 +40,5 @@ function mapStateToProps(state: RootState): Partial<ComponentProperties> {
   };
 }
 
-function mapDispatchToProps(dispatch: Dispatch<RootState>) {
-  return {
-    increment: bindActionCreators(actions.incrementReact, dispatch),
-    decrement: bindActionCreators(actions.decrementReact, dispatch)
-  };
-}
-
 export default connect<{}, {}, ComponentProperties>(
-  mapStateToProps,
-  mapDispatchToProps
-)(CompleteReactReduxTester) as React.ComponentClass<{}>;
+  mapStateToProps, {})(CompleteReactReduxTester) as React.ComponentClass<{}>;

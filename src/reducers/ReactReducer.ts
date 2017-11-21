@@ -12,10 +12,10 @@ export const reduce: Reducer<ReactCounterState> = createReducer<ReactCounterStat
 
 reduce.on(action.incrementReact, (state, _) => ({
   ...state,
-  simpleCounter: state.reactCounter + 1
+  reactCounter: state.reactCounter + 1
 }));
 
 reduce.on(action.decrementReact, (state, _) => ({
   ...state,
-  simpleCounter: state.reactCounter - 1
+  reactCounter: state.reactCounter - 1
 }));
