@@ -40,5 +40,4 @@ function mapStateToProps(state: RootState): Partial<ComponentProperties> {
   };
 }
 
-export default connect<{}, {}, ComponentProperties>(
-  mapStateToProps, {})(CompleteReactReduxTester) as React.ComponentClass<{}>;
+export default connect<{}, {}, ComponentProperties>(mapStateToProps, {})(CompleteReactReduxTester) as React.ComponentClass<{}>;
