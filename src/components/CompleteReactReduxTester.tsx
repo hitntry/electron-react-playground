@@ -8,7 +8,7 @@ export interface ComponentProperties {
   counter: number;
 }
 
-class CompleteReactReduxTester extends React.Component<ComponentProperties> {
+class CompleteReactReduxTester extends React.Component<ComponentProperties, {}> {
   constructor(props: ComponentProperties) {
     super(props);
     this.downClickedHandler = this.downClickedHandler.bind(this);

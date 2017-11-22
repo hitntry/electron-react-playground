@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { HttpClient } from '../api/httpclient';
-import { Appnews, Newsitem } from '@src/types/';
+import { Appnews, Newsitem } from '../types/';
 
 export interface ComponentProperties {}
 
